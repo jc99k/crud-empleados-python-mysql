@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD de Empleados</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 </head>
 <body>
     <section class="section">
         <div class="container">
-            <h1 class="title">Empleados</h1>
+            <h1 class="title">Empleados <i class="devicon-python-plain"></i> <i class="devicon-mysql-plain"></i></h1>
             <div class="columns">
                 <div class="column is-one-third">
                     <form action="{{ url_for('insert') }}" method="POST">
@@ -65,7 +66,7 @@
                                 <td>{{ employee.3 }}</td>
                                 <td>{{ employee.4 }}</td>
                                 <td>
-                                    <a href="/update/{{ employee.0 }}" class="button is-warning is-small" data-toggle="modal" data-target="#modaledit{{employee.0}}">Editar</a>
+                                    <a class="button is-warning is-small js-modal-trigger" data-target="modaledit{{employee.0}}">Editar</a>
                                     <a href="/delete/{{ employee.0 }}" class="button is-danger is-small" onclick="return confirm('¿Estás seguro de que quieres eliminar?')">Eliminar</a>
                                 </td>
                             </tr>
